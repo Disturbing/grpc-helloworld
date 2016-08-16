@@ -13,6 +13,5 @@ docker run -d -p 50051:50051 tobegit3hub/grpc-helloworld
 Start the gRPC client.
 
 ```
-docker run -it --net=host grpc-helloworld bash
-./greeter_client.py
+docker run -d --net=host grpc-helloworld /greeter_client.py localhost:50051
 ```
