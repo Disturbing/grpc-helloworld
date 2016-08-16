@@ -4,14 +4,15 @@ It's the gRPC hello world application. The example code is from [grpc/grpc](http
 
 ## Usage
 
-Start gRPC server.
+Start the gRPC server.
 
 ```
 docker run -d -p 50051:50051 tobegit3hub/grpc-helloworld
 ```
 
-Start gRPC client.
+Start the gRPC client.
 
 ```
+docker run -it --net=host grpc-helloworld bash
 ./greeter_client.py
 ```
