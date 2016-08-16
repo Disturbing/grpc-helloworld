@@ -7,11 +7,11 @@ It's the gRPC hello world application. The example code is from [grpc/grpc](http
 Start gRPC server.
 
 ```
-
+docker run -d -p 50051:50051 tobegit3hub/grpc-helloworld
 ```
 
 Start gRPC client.
 
 ```
-
+./greeter_client.py
 ```

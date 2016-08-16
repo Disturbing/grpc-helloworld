@@ -1,10 +1,12 @@
 FROM python:2.7
 
 ADD requirements.txt /
-CMD pip install -r /requirements.txt
+RUN pip install -r /requirements.txt
 
 ADD . /
 
 WORKDIR /
 
-CMD bash
+EXPOSE 50051
+
+CMD /greeter_server.py
