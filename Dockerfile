@@ -1,4 +1,10 @@
-FROM grpc/python:0.11-onbuild
+FROM python:2.7
+
+ADD requirements.txt /
+CMD pip install -r /requirements.txt
 
 ADD . /
-CMD 
+
+WORKDIR /
+
+CMD bash

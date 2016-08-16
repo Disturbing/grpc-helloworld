@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from concurrent import futures
 import time
 
@@ -15,8 +17,9 @@ class Greeter(helloworld_pb2.GreeterServicer):
 
 
 def serve():
-  server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-  helloworld_pb2.add_GreeterServicer_to_server(Greeter(), server)
+  #server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+  #helloworld_pb2.add_GreeterServicer_to_server(Greeter(), server)
+  server = helloworld_pb2.beta_create_Greeter_server(Greeter())
   server.add_insecure_port('[::]:50051')
   server.start()
   try:
